@@ -1,0 +1,9 @@
+query {
+	categories {
+		id
+		name
+		isHidden
+		created
+		updated
+	}
+}

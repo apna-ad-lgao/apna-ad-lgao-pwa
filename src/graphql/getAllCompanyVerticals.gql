@@ -1,0 +1,9 @@
+query {
+    getAllCompanyVerticals {
+        id
+        companyId
+        verticalId
+        company
+        vertical
+    }
+}

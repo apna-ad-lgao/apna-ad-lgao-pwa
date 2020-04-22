@@ -1,0 +1,10 @@
+mutation createCountry($name: String, $alpha2code: String, $alpha3code: String, $isonumeric: String, $continent: String) {
+    createCountry(name: $name, alpha2code: $alpha2code, alpha3code: $alpha3code, isonumeric: $isonumeric, continent: $continent) {
+        id
+		name
+		alpha2code
+		alpha3code
+		isonumeric
+		continent
+    }
+} 

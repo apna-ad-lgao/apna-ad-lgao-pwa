@@ -1,0 +1,12 @@
+query publicUserCompanyList($id:Int!) {
+   publicUserCompanyList(id:$id) {
+        company
+        vertical
+        companyVerticalId
+        type
+        companyId
+        verticalId
+        isHidden
+        isUserCompany
+    }
+}

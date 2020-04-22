@@ -1,0 +1,9 @@
+query {
+    industries {
+		id
+        name
+		isHidden
+		created
+		updated
+	}
+}

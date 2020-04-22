@@ -1,0 +1,18 @@
+query verticalWiseAccounts($fromDate: String!, $toDate: String!){
+    verticalWiseAccounts (fromDate: $fromDate, toDate: $toDate){
+        name: company
+        vertical
+        type
+        verticalId
+        companyVerticalId
+        vocUpdatedDate
+        vodUpdatedDate
+        lastVOCRating
+        lastVODRating
+        vocRatings
+        vocFeedbacks
+        vodRatings
+        vodFeedbacks
+        isHidden
+    }
+}

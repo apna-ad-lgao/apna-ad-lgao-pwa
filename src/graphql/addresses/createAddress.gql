@@ -1,0 +1,15 @@
+mutation createAddress($name: String!, $building: String!, $landmark: String!, $street: String!, $pincode: Int!, $stateId: Int!, $userId: Int!) {
+  createAddress(name: $name, building: $building, landmark: $landmark, street: $street, pincode: $pincode, stateId: $stateId, userId: $userId) {
+    id
+    name
+    building
+    landmark
+    street
+    pincode
+    stateId
+    userId
+    isHidden
+    created
+    updated
+  }
+}

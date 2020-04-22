@@ -1,0 +1,15 @@
+query {
+	users {
+		id
+		name
+		mobile
+		email
+		password
+		image
+		isAdmin
+		isPartner
+		isHidden
+		created
+		updated
+	}
+}

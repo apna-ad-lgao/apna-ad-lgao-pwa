@@ -1,0 +1,12 @@
+mutation updateDevice($fingerprint: String, $isHidden: Boolean) {
+    updateDevice(fingerprint: $fingerprint, isHidden: $isHidden) {
+        id
+        uuid
+        model
+        platform
+		fingerprint
+		isHidden
+		created
+		updated
+    }
+}

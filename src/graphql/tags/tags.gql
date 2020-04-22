@@ -1,0 +1,9 @@
+query {
+    tags {
+		id
+        name
+		isHidden
+		created
+		updated
+	}
+}

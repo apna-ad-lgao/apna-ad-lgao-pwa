@@ -1,0 +1,14 @@
+query {
+    OrderHistories {
+		id
+		total
+		status
+		fromDate
+		toDate
+		userId
+		bannerId
+		isHidden
+		created
+		updated
+  }
+}

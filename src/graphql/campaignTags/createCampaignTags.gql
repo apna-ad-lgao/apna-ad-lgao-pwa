@@ -1,0 +1,10 @@
+mutation createCampaignTags($campaignId: Int, $tagsId: Int) {
+    createCampaignTags(campaignId: $campaignId, tagsId: $tagsId) {
+        id
+		campaignId
+		tagsId
+		isHidden
+		created
+		updated
+    }
+}

@@ -1,0 +1,7 @@
+query fetchCompanyVocAndVod($id: Int!) {
+  fetchCompanyVocAndVod(id: $id) {
+    name
+    voc
+    vod
+  }
+}

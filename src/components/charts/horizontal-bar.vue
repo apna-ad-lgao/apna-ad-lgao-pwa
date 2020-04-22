@@ -1,0 +1,25 @@
+<script>
+import { HorizontalBar } from 'vue-chartjs';
+
+export default {
+  extends: HorizontalBar,
+  props: {
+    chartData: {
+      type: Object,
+      default: null,
+    },
+    options: {
+      type: Object,
+      default: null,
+    },
+  },
+  watch: {
+    chartData() {
+      this.renderChart(this.chartData, this.options);
+    },
+  },
+  mounted() {
+    this.renderChart(this.chartData, this.options);
+  },
+};
+</script>

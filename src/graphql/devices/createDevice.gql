@@ -1,0 +1,12 @@
+mutation createDevice($uuid: Int, $model: String, $platform: String, $fingerprint: String) {
+    createDevice(uuid: $uuid, model: $model, platform: $platform, fingerprint: $fingerprint) {
+        id
+        uuid
+        model
+        platform
+		fingerprint
+		isHidden
+		created
+		updated
+    }
+}

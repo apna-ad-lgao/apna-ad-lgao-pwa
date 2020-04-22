@@ -1,0 +1,10 @@
+query getCategoryWiseIssue($fromDate: String!, $toDate: String!){
+    getCategoryWiseIssue (fromDate: $fromDate, toDate: $toDate){
+      verticalName
+      total  
+      values {
+        keyword  
+        countofkeyword
+      }
+    }
+}

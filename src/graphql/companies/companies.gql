@@ -1,0 +1,32 @@
+query {
+	companies {
+		id
+		name
+		description
+		image
+		isParentCompany
+		addressId
+		latitude
+		longitude
+		industryId
+		gst
+		angellist 
+		discord
+		facebook
+		github
+		google
+		instagram
+		justdial
+		linkedin
+		pinterest
+		slack
+		tiktok
+		twitter
+		web
+		youtube
+		isActive
+		isHidden
+		created
+		updated
+	}
+}

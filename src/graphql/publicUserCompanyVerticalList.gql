@@ -1,0 +1,10 @@
+query {
+   publicUserCompanyVerticalList:publicUserCompanyList {
+        company
+        vertical
+        companyVerticalId
+        type
+        companyId
+        verticalId
+    }
+}

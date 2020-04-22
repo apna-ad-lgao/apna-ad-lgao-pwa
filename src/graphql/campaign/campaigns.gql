@@ -1,0 +1,10 @@
+query {
+    campaigns {
+		id
+		name
+		description
+		isHidden
+		created
+		updated
+	}
+}

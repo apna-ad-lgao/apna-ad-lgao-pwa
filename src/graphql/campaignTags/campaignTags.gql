@@ -1,0 +1,10 @@
+query {
+	campaignTags {
+		id
+		campaignId
+		tagsId
+		isHidden
+		created
+		updated
+	}
+}

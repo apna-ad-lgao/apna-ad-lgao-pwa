@@ -1,0 +1,12 @@
+query {
+    userCompanies {
+		id
+        userId
+		companyId
+		isOwner
+		isMarketer
+		isHidden
+		created
+		updated
+	}
+}

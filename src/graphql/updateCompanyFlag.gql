@@ -1,0 +1,5 @@
+mutation updateCompanyFlag($id: Int!, $isHidden: Int!) {
+  updateCompanyFlag(id: $id, isHidden: $isHidden) {
+    id
+  }
+}

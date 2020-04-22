@@ -1,0 +1,5 @@
+mutation updateUserState($userId: Int!,$isHidden: Int!) {
+  updateUserState(userId: $userId, isHidden: $isHidden) {
+    id
+  }
+}

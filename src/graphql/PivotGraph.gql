@@ -1,0 +1,8 @@
+query getPivotGraphData($fromDate: String!, $toDate: String!){
+    getPivotGraphData (fromDate: $fromDate, toDate: $toDate){
+      verticalName 
+      vocAvg
+      vodAvg
+      avgRating
+    }
+}

@@ -1,0 +1,10 @@
+query {
+    userDevices {
+		id
+        userId
+		deviceId
+		isHidden
+		created
+		updated
+	}
+}

@@ -1,0 +1,9 @@
+mutation updateTags($ids: [Int], $name: String, $isHidden: Boolean) {
+    updateTags(ids: $ids, name: $name , isHidden: $isHidden) {
+        id
+        name
+		isHidden
+		created
+		updated
+    }
+}

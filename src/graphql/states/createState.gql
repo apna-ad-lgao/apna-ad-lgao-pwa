@@ -1,0 +1,12 @@
+mutation createState($name: String, $countryId: Int, $loccode: String, $status: String) {
+    createState(name: $name, countryId: $countryId, loccode: $loccode, status: $status) {
+        id
+        name
+		countryId 
+		loccode
+		status
+		isHidden
+		created
+		updated
+    }
+}

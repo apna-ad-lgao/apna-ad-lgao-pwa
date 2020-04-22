@@ -1,0 +1,14 @@
+mutation deleteTags($ids: [Int]) {
+    deleteTags(ids: $ids) {
+        id
+		total
+		status
+		fromDate
+		toDate
+		userId
+		bannerId
+		isHidden
+		created
+		updated
+    }
+}

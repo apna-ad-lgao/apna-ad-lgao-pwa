@@ -1,0 +1,6 @@
+query {
+  fetchAllCompanies {
+    id
+    name
+  }
+}

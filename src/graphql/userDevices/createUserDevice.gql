@@ -1,0 +1,10 @@
+mutation createUserDevice($userId: Int, $deviceId: Int) {
+    createUserDevice(userId: $userId, deviceId: $deviceId) {
+        id
+        userId
+		deviceId
+		isHidden
+		created
+		updated
+    }
+}

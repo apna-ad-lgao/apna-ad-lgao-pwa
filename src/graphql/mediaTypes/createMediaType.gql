@@ -1,0 +1,9 @@
+mutation createMediaType($name: String) {
+    createMediaType(name: $name) {
+        id
+        name
+		isHidden
+		created
+		updated
+    }
+}

@@ -1,0 +1,9 @@
+mutation updateIndustry($name: String, $isHidden: Boolean) {
+    updateIndustry(name: $name, isHidden: $isHidden) {
+        id
+        name
+		isHidden
+		created
+		updated
+    }
+}

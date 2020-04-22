@@ -1,0 +1,10 @@
+query {
+	countries {
+		id
+		name
+		alpha2code
+		alpha3code
+		isonumeric
+		continent
+	}
+}

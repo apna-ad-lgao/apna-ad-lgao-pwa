@@ -1,0 +1,5 @@
+mutation UpdateUsersFlag($id: Int!, $isHidden: Int!) { 
+  updateUsersFlag(id: $id, isHidden: $isHidden) {
+    isHidden
+  }
+}

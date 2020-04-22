@@ -1,0 +1,9 @@
+query fetchCompany($id: Int!){
+    fetchCompany (id: $id){
+        id
+        name
+        type
+        verticalId
+        isHidden
+    }
+}

@@ -1,0 +1,5 @@
+mutation updateUserCompanyByVerticalFlag($id: Int!,$userId: Int! ,$isHidden: Int!) {
+  updateUserCompanyByVerticalFlag( id: $id,userId:$userId,isHidden: $isHidden ) {
+    id
+  }
+}

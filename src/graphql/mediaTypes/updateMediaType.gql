@@ -1,0 +1,9 @@
+mutation updateMediaType($name: String, $isHidden: Boolean) {
+    updateMediaType(name: $name, isHidden: $isHidden) {
+        id
+        name
+		isHidden
+		created
+		updated
+    }
+}

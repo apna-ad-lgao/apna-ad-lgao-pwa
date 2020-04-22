@@ -1,0 +1,9 @@
+mutation createTags($name: String) {
+    createTags(name: $name) {
+        id
+        name
+		isHidden
+		created
+		updated
+    }
+}

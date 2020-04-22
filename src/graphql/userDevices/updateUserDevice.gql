@@ -1,0 +1,10 @@
+mutation updateUserDevice($id: Int!, $deviceId: Int!) {
+    updateUserDevice(id: $id, deviceId: $deviceId) {
+        id
+        userId
+		deviceId
+		isHidden
+		created
+		updated
+    }
+}

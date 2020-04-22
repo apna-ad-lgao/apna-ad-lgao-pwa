@@ -1,0 +1,15 @@
+query {
+    addresses {
+        id
+        name
+        building
+        landmark
+        street
+        pincode
+        stateId
+        userId
+        isHidden
+        created
+        updated
+    }
+}

@@ -1,0 +1,12 @@
+query {
+    states {
+		id
+        name
+		countryId 
+		loccode
+		status
+		isHidden
+		created
+		updated
+	}
+}

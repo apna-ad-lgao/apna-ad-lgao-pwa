@@ -1,0 +1,12 @@
+query {
+    devices {
+		id
+        uuid
+        model
+        platform
+		fingerprint
+		isHidden
+		created
+		updated
+	}
+}

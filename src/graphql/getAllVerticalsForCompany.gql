@@ -1,0 +1,6 @@
+query GetAllVerticalsForCompany($companyId: Int!) {
+  getAllVerticalsForCompany(companyId: $companyId) {
+    verticalId
+    vertical
+  }
+}

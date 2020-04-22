@@ -1,0 +1,14 @@
+query getAllUsersByCompanyVertical($id: Int!){
+    getAllUsersByCompanyVertical (id: $id){
+        id
+        firstName
+        lastName
+        isVOC
+        isVOD
+        isAdmin
+        isReviewer
+        verticalId
+        isHidden
+        userHidden
+    }
+}

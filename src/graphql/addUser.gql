@@ -1,0 +1,7 @@
+mutation AddUser($firstName: String!, $lastName: String!, $ohrid: Int!, $isVOC: Int!, $isVOD: Int!, $isReviewer: Int!, $isAdmin: Int!, $companyId: Int!, $verticalId: Int!) {
+  addUser(firstName: $firstName, lastName: $lastName, ohrid: $ohrid, isVOC: $isVOC, isVOD: $isVOD, isReviewer: $isReviewer, isAdmin: $isAdmin, companyId: $companyId, verticalId: $verticalId) {
+    id,
+    firstName
+    lastName
+  }
+}

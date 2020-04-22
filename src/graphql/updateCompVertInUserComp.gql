@@ -1,0 +1,9 @@
+mutation UpdateCompVertInUserComp($userCompanyId: Int!, $userId: Int!, $newCompanyVerticalId: Int!){
+  updateCompVertInUserComp(userCompanyId: $userCompanyId, userId: $userId, newCompanyVerticalId: $newCompanyVerticalId) {
+    userId
+    companyVerticalId
+    created
+    updated
+    id
+  }
+}

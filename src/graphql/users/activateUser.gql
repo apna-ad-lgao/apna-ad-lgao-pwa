@@ -1,0 +1,16 @@
+mutation activateUser($userId: Int!) {
+    activateUser(userId: $userId) {
+        id
+		name
+		mobile
+		email
+		password
+		image
+		isAdmin
+		isPartner
+		isHidden
+		created
+		updated
+    }
+}
+ 

@@ -1,0 +1,12 @@
+mutation createUserCompany($userId: Int, $companyId: Int) {
+    createUserCompany(userId: $userId, companyId: $companyId) {
+        id
+        userId
+		companyId
+		isOwner
+		isMarketer
+		isHidden
+		created
+		updated
+    }
+}

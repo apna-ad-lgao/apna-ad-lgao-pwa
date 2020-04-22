@@ -1,0 +1,12 @@
+mutation updateUserCompany($id: Int!, $userId: Int, $companyId: Int) {
+    updateUserCompany(id: $id, userId: $userId, companyId: $companyId) {
+        id
+        userId
+		companyId
+		isOwner
+		isMarketer
+		isHidden
+		created
+		updated
+    }
+}

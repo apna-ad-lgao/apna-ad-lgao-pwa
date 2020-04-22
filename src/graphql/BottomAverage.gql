@@ -1,0 +1,6 @@
+query getBottomAccount($fromDate: String!, $toDate: String!, $vertical: String!){
+    getBottomAccount (fromDate: $fromDate, toDate: $toDate, vertical: $vertical){
+      companyName
+      avgRating
+    }
+}

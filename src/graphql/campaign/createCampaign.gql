@@ -1,0 +1,10 @@
+mutation createCampaign($name: String, $description: String) {
+    createCampaign(name: $name, description: $description) {
+        id
+		name
+		description
+		isHidden
+		created
+		updated
+    }
+}

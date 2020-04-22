@@ -1,0 +1,5 @@
+mutation updateCompanyDetails($id: Int!, $name: String!, $type: String!,$verticalId: Int!) {
+  updateCompanyDetails(id: $id, name: $name, type: $type, verticalId: $verticalId) {
+    id
+  }
+}

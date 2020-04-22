@@ -1,0 +1,6 @@
+mutation AddUserToCompanyVertical($userId: Int!, $companyId: Int!, $verticalId: Int!){
+  addUserToCompanyVertical(userId: $userId, companyId: $companyId, verticalId: $verticalId) 	{
+    userId
+    companyVerticalId
+  }
+}

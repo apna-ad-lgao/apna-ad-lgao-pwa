@@ -1,0 +1,10 @@
+mutation updateCampaign($name: String, $description: String, $isHidden: Boolean) {
+    updateCampaign(name: $name, description: $model, isHidden: $isHidden) {
+        id
+		name
+		description
+		isHidden
+		created
+		updated
+    }
+}

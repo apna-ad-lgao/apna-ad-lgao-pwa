@@ -1,0 +1,15 @@
+mutation updateUser($id: Int!) {
+    updateUser(id: $id) {
+        id
+		name
+		mobile
+		email
+		password
+		image
+		isAdmin
+		isPartner
+		isHidden
+		created
+		updated
+    }
+}

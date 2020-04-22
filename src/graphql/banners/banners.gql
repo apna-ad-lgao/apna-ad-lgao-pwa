@@ -1,0 +1,30 @@
+query {
+    banners {
+        id: Int
+        name: String
+        description: String
+        image: String
+        addressId: Int
+        latitude: Int
+        longitude: Int
+        industryId: Int
+        categoryId: Int
+        mediaTypeId: Int
+        ainNumber: Int
+        facingFrom: String
+        towardsTo: String
+        size: String
+        sft: Int
+        isLightning: Boolean
+        isDigital: Boolean
+        price: Int
+        currencyId: Int
+        bookingStartDate: String
+        bookingEndDate: String
+        activeStartDate:  String
+        activeEndDate: String
+        isHidden: Boolean
+        created: String
+        updated: String
+    }
+}

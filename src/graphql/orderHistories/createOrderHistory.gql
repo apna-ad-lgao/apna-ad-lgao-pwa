@@ -1,0 +1,14 @@
+mutation createOrderHistory($total: Int, $status: String, $fromDate: String, $toDate: String, $userId: Int, $bannerId: Int) {
+    createOrderHistory(total: $total, status: $status, fromDate: $fromDate, toDate: $toDate, userId: $userId, bannerId: $bannerId) {
+        id
+		total
+		status
+		fromDate
+		toDate
+		userId
+		bannerId
+		isHidden
+		created
+		updated
+    }
+}

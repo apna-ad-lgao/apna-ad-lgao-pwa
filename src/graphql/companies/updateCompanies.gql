@@ -1,0 +1,39 @@
+mutation updateCompany($id: Int, $name: String, $description: String, $image: String, $isParentCompany: Boolean, $addressId: Int, $latitude: Int, $longitude: Int,
+    $industryId: Int, $gst: String, $angellist: String, $discord: String, $facebook: String, $github: String, $google: String, $instagram: String,
+    $justdial: String, $linkedin: String, $pinterest: String, $slack: String, $tiktok: String, $twitter: String, $web: String, $youtube: String,
+    $isActive: Boolean, $isHidden: Boolean, $created: String, $updated: String) {
+        
+    updateCompany(id: $id, name: $name, description: $description, image: $image, isParentCompany: $isParentCompany, addressId: $addressId, latitude: $latitude, longitude: $longitude,
+        industryId: $industryId, gst: $gst, angellist: $angellist, discord: $discord, facebook: $facebook, github: $github, google: $google, instagram: $instagram,
+        justdial: $justdial, linkedin: $linkedin, pinterest: $pinterest, slack: $slack, tiktok: $tiktok, twitter: $twitter, web: $web, youtube: $youtube,
+        isActive: $isActive, isHidden: $isHidden, created: $created, updated: $updated) {
+            id
+            name
+            description
+            image
+            isParentCompany
+            addressId
+            latitude
+            longitude
+            industryId
+            gst
+            angellist 
+            discord
+            facebook
+            github
+            google
+            instagram
+            justdial
+            linkedin
+            pinterest
+            slack
+            tiktok
+            twitter
+            web
+            youtube
+            isActive
+            isHidden
+            created
+            updated
+    }
+}

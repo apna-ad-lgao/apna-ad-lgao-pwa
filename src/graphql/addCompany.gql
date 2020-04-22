@@ -1,0 +1,7 @@
+mutation addCompany($name: String!, $type: String!, $vertical: Int!) {
+  addCompany(name: $name, type: $type, vertical: $vertical) {
+    id
+    name
+    companyVerticalId
+  }
+}
