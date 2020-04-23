@@ -1,6 +1,7 @@
 import ADD_ADDRESS from '@/graphql/addresses/createAddress.gql';
 import ADDRESSES from '@/graphql/addresses/addresses.gql';
 import UPDATE_ADDRESS from '@/graphql/addresses/updateAddress.gql';
+import { AUTH_ERRORS } from '../../utils/error';
 
 // eslint-disable-next-line no-unused-vars
 export default ({ $http, $vf, $apollo }) => ({
@@ -24,6 +25,7 @@ export default ({ $http, $vf, $apollo }) => ({
     let { data } = await $apollo.query({ query: ADDRESSES });
     if (data && data.addresses && data.addresses.length > 0) {
       data = data.addresses[0];
+      data.countryId = 102;
       context.commit('setPartnerAddressInState', data);
     }
     return data;
@@ -38,13 +40,13 @@ export default ({ $http, $vf, $apollo }) => ({
   },
   async addPartnerAddress(context, payload) {
     const {
-      name, building, landmark, street, pincode, stateId, userId, isAdmin,
+      name, building, landmark, street, pincode, stateId,
     } = payload;
-    if (!name || !building || !landmark || !street || !pincode || !stateId || !userId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
+    if (!name || !building || !landmark || !street || !pincode || !stateId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
     let { data } = await $apollo.mutate({
       mutation: ADD_ADDRESS,
       variables: {
-        name, building, landmark, street, pincode, stateId, isAdmin,
+        name, building, landmark, street, pincode, stateId,
       },
     });
     if (data && data.createAddress) {
@@ -55,13 +57,13 @@ export default ({ $http, $vf, $apollo }) => ({
   },
   async updatePartnerAddress(context, payload) {
     const {
-      id, name, building, landmark, street, pincode, stateId, userId, isAdmin,
+      id, name, building, landmark, street, pincode, stateId, isAdmin,
     } = payload;
-    if (!id || !name || !building || !landmark || !street || !pincode || !stateId || !userId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
+    if (!id || !name || !building || !landmark || !street || !pincode || !stateId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
     let { data } = await $apollo.mutate({
       mutation: UPDATE_ADDRESS,
       variables: {
-        id, name, building, landmark, street, pincode, stateId, userId, isAdmin,
+        id, name, building, landmark, street, pincode, stateId, isAdmin,
       },
     });
     if (data && data.createAddress) {

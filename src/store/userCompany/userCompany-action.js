@@ -16,7 +16,7 @@ export default ({ $http, $vf, $apollo }) => ({
     });
     if (data && data.createUserComapny) {
       data = data.createUserComapny;
-      context.commit('setAddUserComapnyInState', data);
+      context.commit('setAddUserCompanyInState', data);
     }
     return data;
   },
@@ -24,7 +24,7 @@ export default ({ $http, $vf, $apollo }) => ({
     let { data } = await $apollo.query({ query: USERCOMPANIES });
     if (data && data.userCompanies && data.userCompanies.length > 0) {
       data = data.userCompanies;
-      context.commit('setUserComapniesInState', data);
+      context.commit('setUserCompaniesInState', data);
     }
     return data;
   },
@@ -39,7 +39,7 @@ export default ({ $http, $vf, $apollo }) => ({
     });
     if (data && data.updateUserComapny) {
       data = data.updateUserComapny;
-      context.commit('setUpdateUserComapnyInState', data);
+      context.commit('setUpdateUserCompanyInState', data);
     }
     return data;
   },
@@ -47,7 +47,7 @@ export default ({ $http, $vf, $apollo }) => ({
     let { data } = await $apollo.query({ query: USERCOMPANIES });
     if (data && data.userCompanies && data.userCompanies.length > 0) {
       data = data.userCompanies[0];
-      context.commit('setUserComapnyInState', data);
+      context.commit('setUserCompanyInState', data);
     }
     return data;
   },

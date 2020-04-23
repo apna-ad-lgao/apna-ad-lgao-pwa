@@ -1,5 +1,5 @@
-mutation createCompany($name: String, $description: String, $image: String, $isParentCompany: Boolean, $addressId: Int) {
-    createCompany(name: $name, description: $description, image: $image, isParentCompany: $isParentCompany, addressId: $addressId) {
+mutation createCompany($name: String, $description: String, $image: String, $isParentCompany: Boolean, $addressId: Int, $industryId: Int) {
+    createCompany(name: $name, description: $description, image: $image, isParentCompany: $isParentCompany, addressId: $addressId, industryId: $industryId) {
         id
 		name
 		description

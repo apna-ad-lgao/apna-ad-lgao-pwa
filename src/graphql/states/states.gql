@@ -1,5 +1,5 @@
-query {
-    states {
+query states($id: Int, $countryId: Int, $isHidden: Boolean) {
+    states(id: $id, countryId: $countryId, isHidden: $isHidden) {
 		id
         name
 		countryId 

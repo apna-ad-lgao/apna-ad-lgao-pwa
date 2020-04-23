@@ -53,4 +53,17 @@ export default ({ $http, $vf, $apollo }) => ({
     }
     return data;
   },
+  // async getCountryByStateId(context, payload) {
+  //   const { stateId } = payload;
+  //   let { data } = await $apollo.query({
+  //     query:
+  //     COUNTRIES,
+  //     variables: { id: stateId, isHidden: false },
+  //   });
+  //   if (data && data.states && data.states.length > 0) {
+  //     data = data.states[0];
+  //     context.commit('setCountryIdInState', data);
+  //   }
+  //   return data;
+  // },
 });

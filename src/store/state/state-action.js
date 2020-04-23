@@ -28,6 +28,17 @@ export default ({ $http, $vf, $apollo }) => ({
     }
     return data;
   },
+  async getStatesByCountryId(context, payload) {
+    let { countryId } = payload;
+    let { data } = await $apollo.query({ query: GET_STATES_FOR_COUNTRY,
+      variables: { countryId, isHidden: false, },
+    });
+    if (data && data.states && data.states.length > 0) {
+      data = data.states;
+      context.commit('setStatesInState', data);
+    }
+    return data;
+  },
   async updateState(context, payload) {
     const {
       id, name, isHidden,
@@ -40,14 +51,6 @@ export default ({ $http, $vf, $apollo }) => ({
     if (data && data.updateState) {
       data = data.updateState;
       context.commit('setUpdateStateInState', data);
-    }
-    return data;
-  },
-  async getState(context) {
-    let { data } = await $apollo.query({ query: STATES });
-    if (data && data.states && data.states.length > 0) {
-      data = data.states[0];
-      context.commit('setStateInState', data);
     }
     return data;
   },

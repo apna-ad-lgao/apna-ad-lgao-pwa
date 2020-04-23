@@ -1,0 +1,12 @@
+query states($countryId: Int, $isHidden: Boolean) {
+	states(countryId: $countryId, isHidden: $isHidden) {
+		id
+		name
+		countryId 
+		loccode
+		status
+		isHidden
+		created
+		updated
+	}
+}

@@ -1,29 +1,29 @@
-import mediaTypeActionModule from './userCompany-action';
+import userCompanyActionModule from './userCompany-action';
 
 const initializeState = () => ({
-  mediaType: {},
-  mediaTypes: [],
+  userCompany: {},
+  userCompanies: [],
 });
 
 export default ({ $http, $vf, $apollo }) => ({
   state: initializeState(),
   mutations: {
-    setMediaTypeInState(state, payload) {
-      state.mediaType = Object.keys(payload).length ? payload : {};
+    setUserCompanyInState(state, payload) {
+      state.userCompany = Object.keys(payload).length ? payload : {};
     },
-    setMediaTypesInState(state, payload) {
-      state.mediaTypes = payload.length ? payload : [];
+    setUserCompaniesInState(state, payload) {
+      state.userCompanies = payload.length ? payload : [];
     },
-    setAddMediaTypeInState(state, payload) {
-      state.mediaType = Object.keys(payload).length ? payload : {};
+    setAddUserCompanyInState(state, payload) {
+      state.userCompany = Object.keys(payload).length ? payload : {};
     },
-    setUpdateMediaTypeInState(state, payload) {
-      state.mediaType = Object.keys(payload).length ? payload : {};
+    setUpdateUserCompanyInState(state, payload) {
+      state.userCompany = Object.keys(payload).length ? payload : {};
     },
   },
-  actions: mediaTypeActionModule({ $http, $vf, $apollo }),
+  actions: userCompanyActionModule({ $http, $vf, $apollo }),
   getters: {
-    mediaType: (state) => state.mediaType,
-    mediaTypes: (state) => state.mediaTypes,
+    userCompany: (state) => state.userCompany,
+    userCompanies: (state) => state.userCompanies,
   },
 });

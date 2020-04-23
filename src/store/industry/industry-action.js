@@ -20,11 +20,11 @@ export default ({ $http, $vf, $apollo }) => ({
     }
     return data;
   },
-  async getIndustrys(context) {
+  async getIndustries(context) {
     let { data } = await $apollo.query({ query: INDUSTRIES });
     if (data && data.industries && data.industries.length > 0) {
       data = data.industries;
-      context.commit('setIndustrysInState', data);
+      context.commit('setIndustriesInState', data);
     }
     return data;
   },

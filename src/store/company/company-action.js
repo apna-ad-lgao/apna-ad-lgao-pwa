@@ -7,13 +7,13 @@ import { AUTH_ERRORS } from '../../utils/error';
 export default ({ $http, $vf, $apollo }) => ({
   async addCompany(context, payload) {
     const {
-      name, description, image, isParentCompany, addressId,
+      name, description, image, addressId, industryId, pincode,
     } = payload;
-    if (!name || !description || !image || !addressId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
+    if (!name || !description || !addressId || !industryId || !pincode) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
     let { data } = await $apollo.mutate({
       mutation: COMPANY_ADD,
       variables: {
-        name, description, image, isParentCompany, addressId,
+        name, description, image, isParentCompany: true, addressId, industryId, pincode,
       },
     });
     if (data && data.createCompany) {
@@ -34,7 +34,7 @@ export default ({ $http, $vf, $apollo }) => ({
     const {
       id, name, description, image, addressId,
     } = payload;
-    if (!id || !name || !description || !image || !addressId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
+    if (!id || !name || !description || !addressId) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
     let { data } = await $apollo.mutate({
       mutation: COMPANY_UPDATE,
       variables: payload,
@@ -51,6 +51,6 @@ export default ({ $http, $vf, $apollo }) => ({
       data = data.companies[0];
       context.commit('setPartnerCompanyInState', data);
     }
-    return data.companies;
+    return data;
   },
 });

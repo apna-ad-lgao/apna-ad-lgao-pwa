@@ -1,7 +1,14 @@
 import companyActionModule from './company-action';
 
 const initializeState = () => ({
-  partnerCompany: {},
+  partnerCompany: {
+    name: '',
+    description: '',
+    image: '',
+    industryId: 0,
+    pincode: 110000,
+  },
+  partnerCompanies: [],
   company: {},
   companies: [],
 });
@@ -28,6 +35,7 @@ export default ({ $http, $vf, $apollo }) => ({
   actions: companyActionModule({ $http, $vf, $apollo }),
   getters: {
     partnerCompany: (state) => state.partnerCompany,
+    partnerCompanies: (state) => state.partnerCompanies,
     company: (state) => state.company,
     companies: (state) => state.companies,
   },

@@ -15,6 +15,7 @@
       <router-link
         to="/dashboard/tasks"
         class="text-lg letter-spacing-05 uppercase font-normal mt-2 ml-2"
+        @click.native="menuOpened = false"
       >
         <span>Dashboard</span>
       </router-link>
@@ -34,6 +35,7 @@
         v-if="user.isAdmin"
         to="/dashboard/companies"
         class="text-lg letter-spacing-05 uppercase font-normal mt-2 ml-2"
+        @click.native="menuOpened = false"
       >
         <span>Companies</span>
       </router-link>
@@ -50,6 +52,7 @@
         v-if="user.isPartner || user.isAdmin"
         to="/dashboard/address"
         class="text-lg letter-spacing-05 uppercase font-normal mt-2 ml-2"
+        @click.native="menuOpened = false"
       >
         <span>Company Address</span>
       </router-link>
@@ -58,6 +61,7 @@
         v-if="user.isPartner || user.isAdmin"
         to="/dashboard/company"
         class="text-lg letter-spacing-05 uppercase font-normal mt-2 ml-2"
+        @click.native="menuOpened = false"
       >
         <span>Company Detail</span>
       </router-link>
@@ -66,6 +70,7 @@
         v-if="user.isPartner || user.isAdmin"
         to="/dashboard/analytic-dashboard"
         class="text-lg letter-spacing-05 uppercase font-normal mt-2 ml-2"
+        @click.native="menuOpened = false"
       >
         <span>Analytic Dashboard</span>
       </router-link>
@@ -74,6 +79,7 @@
         v-if="user.isAdmin"
         to="/dashboard/download-report"
         class="text-lg letter-spacing-05 uppercase font-normal mt-2 ml-2"
+        @click.native="menuOpened = false"
       >
         <span>Show Report</span>
       </router-link>
@@ -302,14 +308,12 @@ export default {
       return getInitials(this.user.name).slice(0, 2);
     },
   },
-  // watch: {
-  //   $route() {
-  //     this.moveNav();
-  //   },
-  // },
-  // mounted() {
-  //   this.moveNav();
-  // },
+  watch: {
+    $route() {
+    },
+  },
+  mounted() {
+  },
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
