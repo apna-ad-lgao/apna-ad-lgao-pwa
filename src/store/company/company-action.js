@@ -7,18 +7,18 @@ import { AUTH_ERRORS } from '../../utils/error';
 export default ({ $http, $vf, $apollo }) => ({
   async addCompany(context, payload) {
     const {
-      name, description, image, addressId, industryId, pincode,
+      name, description, image, addressId, industryId, gst,
     } = payload;
-    if (!name || !description || !addressId || !industryId || !pincode) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
+    if (!name || !description || !addressId || !industryId || !gst) throw new Error(AUTH_ERRORS.INVALID_DETAIL.message);
     let { data } = await $apollo.mutate({
       mutation: COMPANY_ADD,
       variables: {
-        name, description, image, isParentCompany: true, addressId, industryId, pincode,
+        name, description, image, isParentCompany: true, addressId, industryId, gst,
       },
     });
     if (data && data.createCompany) {
       data = data.createCompany;
-      context.commit('createCompanyInState', data);
+      context.commit('createPartnerCompanyInState', data);
     }
     return data;
   },

@@ -1,6 +1,7 @@
 import STATES from '@/graphql/states/states.gql';
 import STATE_ADD from '@/graphql/states/createState.gql';
 import STATE_UPDATE from '@/graphql/states/updateState.gql';
+import GET_STATES_FOR_COUNTRY from '@/graphql/states/getStatesForCountry.gql';
 import { AUTH_ERRORS } from '../../utils/error';
 
 // eslint-disable-next-line no-unused-vars

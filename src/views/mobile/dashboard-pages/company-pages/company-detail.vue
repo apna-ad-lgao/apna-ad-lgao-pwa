@@ -1,7 +1,7 @@
 <template>
   <section class="auth-page bg-white h-screen">
     <div class="flex flex-wrap h-screen items-center">
-      <form class="max-w-xs mt-auto mx-auto p-6 w-full" method="post" name="validation" role="form" @submit.prevent="(partnerCompany && partnerCompany.id < 1) ? updateCompany({ ...partnerCompanyDetail, addressId: partnerAddress.id, industryId: partnerCompanyDetail.industryId}) : addCompany({ ...partnerCompanyDetail, addressId: partnerAddress.id, industryId: partnerCompanyDetail.industryId})">
+      <form class="max-w-xs mt-auto mx-auto p-6 w-full" method="post" name="validation" role="form" @submit.prevent="partnerCompanyEditable ? updateCompany({ ...partnerCompanyDetail, addressId: partnerAddress.id, industryId: partnerCompanyDetail.industryId}) : addCompany({ ...partnerCompanyDetail, addressId: partnerAddress.id, industryId: partnerCompanyDetail.industryId})">
         <!-- <div class="mb-8 text-center">
           <img src="../../../assets/logo.png" class="mx-auto" width="125" alt="Apna Ad Lgao Logo">
         </div> -->
@@ -13,7 +13,7 @@
           <input
             id="name"
             v-model="partnerCompanyDetail.name"
-            :disabled="disabled"
+            :disabled="partnerCompanyEditable"
             class="
               appearance-none
               bg-gray-100
@@ -40,7 +40,7 @@
           </label>
           <input
             id="description"
-            :disabled="disabled"
+            :disabled="partnerCompanyEditable"
             v-model="partnerCompanyDetail.description"
             class="
               appearance-none
@@ -136,7 +136,7 @@
               rounded
               text-gray-600
               w-full"
-            :disabled="disabled"
+            :disabled="partnerCompanyEditable"
             >
               <option v-for="industryDetail in industries" :key="industryDetail.id" :value="industryDetail.id">
                 {{industryDetail.name}}
@@ -150,13 +150,13 @@
         </div>
 
         <div class="my-5">
-          <label class="block font-bold letter-spacing-05 mb-1 ml-1 text-gray-600 text-gray-800 text-xs uppercase" for="pincode">
-            PinCode
+          <label class="block font-bold letter-spacing-05 mb-1 ml-1 text-gray-600 text-gray-800 text-xs uppercase" for="gst">
+            GST
           </label>
           <input
-            id="pincode"
-            :disabled="disabled"
-            v-model.number="partnerCompanyDetail.pincode"
+            id="gst"
+            :disabled="partnerCompanyEditable"
+            v-model.number="partnerCompanyDetail.gst"
             class="
               appearance-none
               bg-gray-100
@@ -172,13 +172,13 @@
               text-gray-600
               w-full
             "
-            type="number"
-            placeholder="1100"
+            type="text"
+            placeholder="GST"
           >
         </div>
 
         <button
-          v-show="!disabled"
+          v-show="!partnerCompanyEditable"
           :class="{ 'loading': request.key === 'login' && request.inProgress }"
           :disabled="request.key === 'login' && request.inProgress"
           class="bg-green-800 button font-bold hover:bg-green-600 leading-normal letter-spacing-1 mb-12 mt-2 py-3 rounded text-white uppercase w-full"
@@ -188,7 +188,7 @@
         </button>
 
         <button
-          v-show="disabled"
+          v-show="partnerCompanyEditable"
           :class="{ 'loading': request.key === 'login' && request.inProgress }"
           :disabled="request.key === 'login' && request.inProgress"
           class="bg-gray-800 button font-bold hover:bg-gray-600 leading-normal letter-spacing-1 mb-12 mt-2 py-3 rounded text-white uppercase w-full"
@@ -221,12 +221,12 @@ export default {
         description: '',
         image: '',
         industryId: 0,
-        pincode: 110000,
+        gst: null,
       },
     };
   },
   computed: {
-    ...mapGetters(['industries', 'partnerAddress', 'request', 'version', 'partnerCompany']),
+    ...mapGetters(['industries', 'partnerAddress', 'request', 'version', 'partnerCompany', 'partnerCompanyEditable']),
   },
   methods: {
     ...mapActions(['addCompany', 'getIndustries', 'getPartnerAddress', 'updateCompany', 'getPartnerCompany']),

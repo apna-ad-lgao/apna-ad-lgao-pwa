@@ -14,7 +14,6 @@ const initializeState = () => ({
     userId: 0,
   },
   partnerAddresses: [],
-  partnerCompanyEditable: false,
   partnerCompanyAddressEditable: false,
 });
 
@@ -58,7 +57,6 @@ export default ({ $http, $vf, $apollo }) => ({
     addresses: (state) => state.addresses,
     partnerAddress: (state) => state.partnerAddress,
     partnerAddresses: (state) => state.partnerAddresses,
-    partnerCompanyEditable: (state) => state.partnerCompanyAddressEditable,
     partnerCompanyAddressEditable: (state) => state.partnerCompanyAddressEditable,
   },
 });

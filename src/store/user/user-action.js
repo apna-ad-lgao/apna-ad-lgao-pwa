@@ -18,7 +18,7 @@ export default ({ $http, $vf, $apollo }) => ({
     });
     if (data && data.createUser) {
       data = data.createUser;
-      context.commit('setAddUserInUser', data);
+      context.commit('setAddUserInState', data);
     }
     return data;
   },
@@ -26,7 +26,7 @@ export default ({ $http, $vf, $apollo }) => ({
     let { data } = await $apollo.query({ query: USERS });
     if (data && data.users && data.users.length > 0) {
       data = data.users;
-      context.commit('setUsersInUser', data);
+      context.commit('setUsersInState', data);
     }
     return data;
   },
@@ -41,7 +41,7 @@ export default ({ $http, $vf, $apollo }) => ({
     });
     if (data && data.updateUser) {
       data = data.updateUser;
-      context.commit('setUpdateUserInUser', data);
+      context.commit('setUpdateUserInState', data);
     }
     return data;
   },
@@ -49,7 +49,7 @@ export default ({ $http, $vf, $apollo }) => ({
     let { data } = await $apollo.query({ query: USERS });
     if (data && data.users && data.users.length > 0) {
       data = data.users[0];
-      context.commit('setUserInUser', data);
+      context.commit('setUserInState', data);
     }
     return data;
   },
