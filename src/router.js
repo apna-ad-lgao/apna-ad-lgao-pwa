@@ -55,21 +55,20 @@ const DashboardRootPage = () => {
   return import('@/views/mobile/dashboard-pages/dashboard.vue');
 };
 
-/* Dashboard All Tasks Page */
-const DashboardTasksPage = () => {
-  console.log(`in mobile: ${isMobile}`);
+/* Dashboard All Banners Page */
+const DashboardBannersPage = () => {
   if (isMobile) {
-    return import('@/views/mobile/dashboard-pages/task-pages/tasks.vue');
+    return import('@/views/mobile/dashboard-pages/banner-pages/banners.vue');
   }
-  return import('@/views/mobile/dashboard-pages/task-pages/tasks.vue');
+  return import('@/views/mobile/dashboard-pages/banner-pages/banners.vue');
 };
 
 /* Dashboard task feedback entry Page */
-const DashboardCompanyDetailPage = () => {
+const DashboardBannerDetailPage = () => {
   if (isMobile) {
-    return import('@/views/mobile/dashboard-pages/task-pages/task-detail.vue');
+    return import('@/views/mobile/dashboard-pages/banner-pages/banner-detail.vue');
   }
-  return import('@/views/mobile/dashboard-pages/task-pages/task-detail.vue');
+  return import('@/views/mobile/dashboard-pages/banner-pages/banner-detail.vue');
 };
 
 /* Dashboard task feedback entry Page */
@@ -164,9 +163,9 @@ const routes = [
       showHeader: true,
     },
     children: [{
-      path: 'tasks',
-      name: 'Dashboard.Tasks',
-      component: DashboardTasksPage,
+      path: 'banners',
+      name: 'Dashboard.Banners',
+      component: DashboardBannersPage,
       meta: {
         saveScrollPos: true,
         showHeader: true,
@@ -175,7 +174,7 @@ const routes = [
     {
       path: 'company/:companyVerticalId',
       name: 'Dashboard.Company.Detail',
-      component: DashboardCompanyDetailPage,
+      component: DashboardBannerDetailPage,
       meta: {
         showHeader: true,
         showBack: true,
@@ -193,7 +192,7 @@ const routes = [
     {
       path: 'review/company/:companyVerticalId',
       name: 'Dashboard.Review.Company.Detail',
-      component: DashboardCompanyDetailPage,
+      component: DashboardBannerDetailPage,
       meta: {
         showHeader: true,
         showBack: true,
@@ -339,7 +338,7 @@ export default function createRouter(store) {
     } else if (to.matched.some((record) => record.meta.redirectIfLoggedIn)) {
       if (store.getters.isLoggedIn) {
         next({
-          name: 'Dashboard.Tasks',
+          name: 'Dashboard.Banners',
         });
       } else {
         next();

@@ -211,7 +211,7 @@ import {
 const isApp = process.env.VUE_APP_RUN_ENV === 'app';
 
 export default {
-  name: 'TaskDetail',
+  name: 'BannerDetail',
   components: {
     BarChart: () => import('@/components/charts/bar.vue'),
     Modal: () => import('@/components/modal.vue'),

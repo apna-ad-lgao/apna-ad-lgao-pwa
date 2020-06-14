@@ -40,7 +40,7 @@
       </button>
     </div>
     <transition v-else-if="Object.keys(user).length" name="fade">
-      <keep-alive exclude="TaskDetail">
+      <keep-alive exclude="BannerDetail">
         <router-view
           class="view main-cont"
           :user="user"

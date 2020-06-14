@@ -223,7 +223,7 @@ import dayJs from 'dayjs';
 // import Departments from '@/graphql/Departments.gql';
 
 export default {
-  name: 'Tasks',
+  name: 'Banners',
   components: {
     Modal: () => import('@/components/modal.vue'),
     Success: () => import('@/components/animations/success.vue'),
