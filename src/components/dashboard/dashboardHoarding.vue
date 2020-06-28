@@ -1,7 +1,10 @@
 <template>
   <div class="flex-initial grid gap-4 grid-cols-3">
 
-          <div class="flex-1 px-4 py-2 m-2 border-2 hover:border-blue-600" v-for="(hoard,index) in hoarding" v-bind:key="index"
+          <div
+class="flex-1 px-4 py-2 m-2 border-2 hover:border-blue-600"
+v-for="(hoard,index) in hoarding"
+v-bind:key="index"
           :class="{'bg-jaffa-700': index % 2 === 0, 'bg-jaffa-800': index % 2 !== 0 }">
             <img v-bind:src="hoard.imageRef"/>
             <div class="flex justify-center text-blue-700">{{ hoard.name }}</div>
