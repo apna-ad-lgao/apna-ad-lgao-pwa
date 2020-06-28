@@ -4,12 +4,12 @@
     <div class="main">
 
       <dashboardHeader></dashboardHeader>
-      
+
       <div class="bg-gray-100 py-2">
         <DashboardMidView></DashboardMidView>
       </div>
-      
-      <div class="flex bg-gray-200">
+
+      <div class="flex bg-jaffa-500">
 
         <dashboardSideNav></dashboardSideNav>
 
@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-        isApp: process.env.VUE_APP_RUN_ENV === 'app',
+      isApp: process.env.VUE_APP_RUN_ENV === 'app',
     };
   },
 };
