@@ -1,17 +1,20 @@
 <template>
-  <div class="flex-initial grid gap-4 grid-cols-3">
-
-          <div
-class="flex-1 px-4 py-2 m-2 border-2 hover:border-blue-600"
-v-for="(hoard,index) in hoarding"
-v-bind:key="index"
-          :class="{'bg-jaffa-700': index % 2 === 0, 'bg-jaffa-800': index % 2 !== 0 }">
-            <img v-bind:src="hoard.imageRef"/>
-            <div class="flex justify-center text-blue-700">{{ hoard.name }}</div>
-            <div class="flex justify-center text-blue-700">&#8377; {{ hoard.amt }}</div>
-          </div>
-
+<div class="pb-5">
+  <h1 class="text-center font-bold mt-4 mb-2 text-2xl">{{heading}}</h1>
+  <div class="grid gap-3 sm:grid-cols-4 p-4 text-center">
+      <div class="p-5 bg-white rounded-lg shadow-xl" v-for="(hoard,index) in hoarding" v-bind:key="index"
+      :class="{'bg-jaffa-700': index % 2 === 0, 'bg-jaffa-800': index % 2 !== 0 }">
+        <figure class="relative flex flex-col items-center">
+          <span class="flex rounded-lg overflow-hidden h-48 lg:h-32 md:h-32 sm:h-20">
+            <img class="rounded-lg object-cover object-center" v-bind:src="hoard.imageRef"/>
+          </span>
+          <button type="button" class="text-sm absolute bg-white px-2 py-1 rounded-lg shadow-lg h-8 w-8 flex text-red-600" style="right: 0.5rem; top: 0.5rem;"><i class="fa fa-shopping-cart m-auto"></i></button>
+          <div class="text-sm rounded-lg absolute bottom-0 bg-white px-4 py-1 text-red-600" style="margin-bottom: -0.9rem;">&#8377; {{ hoard.amt }}</div>
+        </figure>
+        <h4 class="font-black text-md mt-6">{{ hoard.name }}</h4>
+      </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -22,24 +25,25 @@ export default {
   data() {
     return {
       isApp: process.env.VUE_APP_RUN_ENV === 'app',
+      heading: 'Explore Hoarding',
       hoarding: [
         {
-          id: 1, imageRef: 'https://assets.materialup.com/uploads/3c97a1bf-ec13-4073-b17e-85bc7fec19b9/preview.jpg', name: 'Shimla', amt: '1000',
+          id: 1, imageRef: 'https://applatide.com/images/best-mobile-ad-formats.png', name: 'Shimla', amt: '1000',
         },
         {
-          id: 2, imageRef: 'https://assets.materialup.com/uploads/3c97a1bf-ec13-4073-b17e-85bc7fec19b9/preview.jpg', name: 'Manali', amt: '2100',
+          id: 2, imageRef: 'https://d540vms5r2s2d.cloudfront.net/mad/uploads/mad_blog_5e6b65a1a78411584096673.png', name: 'Manali', amt: '2100',
         },
         {
-          id: 3, imageRef: 'https://assets.materialup.com/uploads/3c97a1bf-ec13-4073-b17e-85bc7fec19b9/preview.jpg', name: 'Kashmir', amt: '1100',
+          id: 3, imageRef: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBdTQ5QY7EDfuHYFoYnHwIZycIlqWSfbHvsNq1sgS70kaKbGo&s', name: 'Kashmir', amt: '1100',
         },
 		    {
-          id: 4, imageRef: 'https://assets.materialup.com/uploads/3c97a1bf-ec13-4073-b17e-85bc7fec19b9/preview.jpg', name: 'Dheradun', amt: '1000',
+          id: 4, imageRef: 'https://d540vms5r2s2d.cloudfront.net/mad/uploads/mad_blog_5e6b65a1a78411584096673.png', name: 'Dheradun', amt: '1000',
         },
         {
-          id: 5, imageRef: 'https://assets.materialup.com/uploads/3c97a1bf-ec13-4073-b17e-85bc7fec19b9/preview.jpg', name: 'Goa', amt: '50000',
+          id: 5, imageRef: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBdTQ5QY7EDfuHYFoYnHwIZycIlqWSfbHvsNq1sgS70kaKbGo&s', name: 'Goa', amt: '50000',
         },
         {
-          id: 6, imageRef: 'https://assets.materialup.com/uploads/3c97a1bf-ec13-4073-b17e-85bc7fec19b9/preview.jpg', name: 'Pondicherry', amt: '11000',
+          id: 6, imageRef: 'https://applatide.com/images/best-mobile-ad-formats.png', name: 'Pondicherry', amt: '11000',
         },
       ],
     };

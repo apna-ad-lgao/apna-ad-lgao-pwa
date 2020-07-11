@@ -261,3 +261,6 @@ export default {
 
 <style src="@/styles/tailwind.css" />
 <style src="@fortawesome/fontawesome-free/css/all.css" />
+<style>
+  *{outline: 0 !important;}
+</style>

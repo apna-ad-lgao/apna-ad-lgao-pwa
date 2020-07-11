@@ -20,7 +20,8 @@ const HomePage = () => {
   if (isMobile) {
     return import('@/views/mobile/auth-pages/home.vue');
   }
-  return import('@/views/mobile/auth-pages/home.vue');
+  //return import('@/views/mobile/auth-pages/home.vue');
+  return import('@/views/desktop/auth-pages/home.vue');
 };
 
 const RegisterPage = () => {
