@@ -20,12 +20,12 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import dashboardBanner from "@/components/dashboard/dashboardBanner.vue";
+import dashboardBanner from '@/components/dashboard/dashboardBanner.vue';
 import DashboardMidView from '@/components/dashboard/dashboardMid.vue';
 import dashboardHeader from '@/components/dashboard/dashboardHeader.vue';
 import dashboardSideNav from '@/components/dashboard/dashboardSideNav.vue';
 import dashboardHoarding from '@/components/dashboard/dashboardHoarding.vue';
-import dashboardFooter from "@/components/dashboard/dashboardFooter.vue";
+import dashboardFooter from '@/components/dashboard/dashboardFooter.vue';
 
 export default {
   components: {

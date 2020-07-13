@@ -20,8 +20,14 @@ const HomePage = () => {
   if (isMobile) {
     return import('@/views/mobile/auth-pages/home.vue');
   }
-  //return import('@/views/mobile/auth-pages/home.vue');
   return import('@/views/desktop/auth-pages/home.vue');
+};
+
+const LandingPage = () => {
+  if (isMobile) {
+    return import('@/views/mobile/auth-pages/landing.vue');
+  }
+  return import('@/views/mobile/auth-pages/landing.vue');
 };
 
 const RegisterPage = () => {
@@ -155,7 +161,7 @@ const routes = [
     },
   },
 
-  {  
+  {
     path: '/home',
     name: 'Auth.HomePage',
     component: HomePage,
@@ -164,6 +170,14 @@ const routes = [
     },
   },
 
+  {
+    path: '/landing',
+    name: 'Auth.LandingPage',
+    component: LandingPage,
+    meta: {
+      redirectIfLoggedIn: true,
+    },
+  },
 
   {
     path: '/register',
