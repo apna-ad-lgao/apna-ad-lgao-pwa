@@ -32,14 +32,14 @@ export default {
         { id: 2, title: 'Mumbai' },
         { id: 3, title: 'Chennai' },
       ],
-      hoarding: false
+      hoarding: false,
     };
   },
   methods: {
     toggleHoarding() {
       this.hoarding = !this.hoarding;
     },
-  }
+  },
 };
 </script>
 
