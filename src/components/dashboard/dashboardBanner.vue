@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scoped>
-  .banner{height: 85vh; border-radius: 0 0 2rem 2rem;}
+  .banner{height: 500px; border-radius: 0 0 2rem 2rem;}
   @media only screen and (min-width: 640px) {
     .banner{border-radius: 0 0 5rem 5rem;}
   }

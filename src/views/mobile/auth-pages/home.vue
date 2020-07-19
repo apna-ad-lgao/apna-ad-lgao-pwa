@@ -34,7 +34,7 @@ export default {
     dashboardHeader,
     dashboardSideNav,
     dashboardHoarding,
-    dashboardFooter
+    dashboardFooter,
   },
   data() {
     return {
