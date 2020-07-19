@@ -1,7 +1,7 @@
 <template>
 <div>
 <header class="bg-transparent fixed top-0 left-0 w-full sm:flex sm:items-center sm:justify-between px-4 py-2" v-bind:class="{fixedHeader: scrollPosition > 100, sideBar: open }">
-  
+
   <!-- Logo text or image -->
   <div class="flex items-center justify-between sm:mb-0">
     <div class="logo">
@@ -18,7 +18,7 @@
     </div>
   </div>
   <!-- END Logo text or image -->
-  
+
   <!-- Search field -->
   <form class="search-header mb-3 w-full sm:mb-0 sm:w-1/4 hidden sm:block mt-4 sm:mt-0" v-bind:class="{searchBar : searchBar}">
     <div class="relative">
@@ -27,7 +27,7 @@
     </div>
   </form>
   <!-- END Search field -->
-  
+
   <!-- Global navigation -->
   <nav class="fixed top-0 right-0 pt-10 shadow sm:shadow-none sm:pt-0 h-full sm:h-auto w-56 sm:w-auto sm:static">
     <span class="rounded-full w-8 h-8 flex items-center justify-center border border-gray-600 text-dark-gray-700 absolute sm:hidden" style="right: 10px; top: 10px;" @click="removeClass">X</span>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+// import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'dashboardHeader',
@@ -57,7 +57,7 @@ export default {
       scrollPosition: null,
       open: false,
       searchBar: false,
-      navigation : ["Home", "About", "Service", "Gallery", "Contact"]
+      navigation: ['Home', 'About', 'Service', 'Gallery', 'Contact'],
     };
   },
   methods: {
@@ -67,12 +67,12 @@ export default {
     addClass() {
     	this.open = true;
     },
-    removeClass(){
+    removeClass() {
       this.open = false;
     },
-    toggleSearch(){
+    toggleSearch() {
       this.searchBar = !this.searchBar;
-    }
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style scoped>
-header.fixedHeader{background: #fff; z-index: 9999; box-shadow: 0 0 10px 1px rgba(0,0,0,0.1); animation: headerScroll 1s ease;}
+header.fixedHeader{background: #fff; z-index: 99; box-shadow: 0 0 10px 1px rgba(0,0,0,0.1); animation: headerScroll 1s ease;}
 header.fixedHeader .menu li a{color: #444;}
 header.fixedHeader .search-header input{border: 1px solid #ccc; color: #444;}
 header.fixedHeader .search-header button{color: #444;}

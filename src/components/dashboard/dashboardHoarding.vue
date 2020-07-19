@@ -21,7 +21,7 @@ v-bind:key="index"
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+// import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'DashboardHoarding',

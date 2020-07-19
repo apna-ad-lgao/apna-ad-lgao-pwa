@@ -9,10 +9,11 @@
       </div>
       <div class="container mx-auto">
         <div class="flex">
-          <!-- <dashboardSideNav></dashboardSideNav> -->
           <dashboardHoarding></dashboardHoarding>
+
         </div>
       </div>
+      <dashboardSideNav></dashboardSideNav>
       <dashboardFooter></dashboardFooter>
     </div>
   </section>
