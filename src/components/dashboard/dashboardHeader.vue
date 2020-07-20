@@ -5,7 +5,10 @@
   <!-- Logo text or image -->
   <div class="flex items-center justify-between sm:mb-0">
     <div class="logo">
-      <img class="w-50 h-10" src="https://whiteandblack.in/wp-content/uploads/2018/10/Branding-Blog-Image-Blog.jpg"/>
+      <img class="w-50 h-10" src="../../assets/logo.png"/>
+      <span>
+        <h1 class="text-black bold">SFIL</h1>
+      </span>
     </div>
 
     <div class="action-buttons">
@@ -22,18 +25,30 @@
   <!-- Search field -->
   <form class="search-header mb-3 w-full sm:mb-0 sm:w-1/4 hidden sm:block mt-4 sm:mt-0" v-bind:class="{searchBar : searchBar}">
     <div class="relative">
-      <input class="bg-transparent border border-gray-100 text-sm px-2 py-1 w-full placeholder-white text-white pr-10" placeholder="Search.." type="text">
-      <button type="button" class="absolute right-0 top-0 px-3 p-1 mt-px text-white"><i class="fa fa-search" aria-hidden="true"></i></button>
+      <input
+        class="bg-transparent rounded-full border border-gray-100 text-sm px-2 py-1 w-full placeholder-white text-white pr-10"
+        placeholder="Search.."
+        type="text">
+      <button type="button" class="absolute right-0 top-0 px-3 p-1 mt-px text-white">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
     </div>
   </form>
   <!-- END Search field -->
 
   <!-- Global navigation -->
   <nav class="fixed top-0 right-0 pt-10 shadow sm:shadow-none sm:pt-0 h-full sm:h-auto w-56 sm:w-auto sm:static">
-    <span class="rounded-full w-8 h-8 flex items-center justify-center border border-gray-600 text-dark-gray-700 absolute sm:hidden" style="right: 10px; top: 10px;" @click="removeClass">X</span>
+    <span
+      class="rounded-full w-8 h-8 flex items-center justify-center border border-gray-600 text-dark-gray-700 absolute sm:hidden"
+      style="right: 10px; top: 10px;"
+      @click="removeClass">
+      X
+    </span>
     <ul class="menu list-reset sm:flex sm:items-center">
       <li class="sm:ml-8" v-for="nav in navigation" :key="nav">
-        <a class="border-t block no-underline hover:underline py-2 text-dark-gray-800 sm:text-white sm:border-none px-4 sm:p-0" href="#">
+        <a
+          class="border-t block no-underline hover:underline py-2 text-dark-gray-800 sm:text-white sm:border-none px-4 sm:p-0"
+          href="'#/">
           {{nav}}
         </a>
       </li>
@@ -65,7 +80,7 @@ export default {
       this.scrollPosition = window.scrollY;
     },
     addClass() {
-    	this.open = true;
+      this.open = true;
     },
     removeClass() {
       this.open = false;

@@ -3,15 +3,20 @@
   <h1 class="text-center font-bold mt-4 mb-2 text-2xl">{{heading}}</h1>
   <div class="grid gap-3 sm:grid-cols-4 p-4 text-center">
       <div
-class="p-5 bg-white rounded-lg shadow-xl"
-v-for="(hoard,index) in hoarding"
-v-bind:key="index"
-      :class="{'bg-jaffa-700': index % 2 === 0, 'bg-jaffa-800': index % 2 !== 0 }">
+        class="p-5 bg-white rounded-lg shadow-xl"
+        v-for="(hoard,index) in hoarding"
+        v-bind:key="index"
+        :class="{'bg-jaffa-700': index % 2 === 0, 'bg-jaffa-800': index % 2 !== 0 }">
         <figure class="relative flex flex-col items-center">
           <span class="flex w-full rounded-lg overflow-hidden h-48 lg:h-32 md:h-32 sm:h-20">
             <img class="rounded-lg object-cover object-center" v-bind:src="hoard.imageRef"/>
           </span>
-          <button type="button" class="text-sm absolute bg-white px-2 py-1 rounded-lg shadow-lg h-8 w-8 flex text-red-600" style="right: 0.5rem; top: 0.5rem;"><i class="fa fa-shopping-cart m-auto"></i></button>
+          <button
+            type="button"
+            class="text-sm absolute bg-white px-2 py-1 rounded-lg shadow-lg h-8 w-8 flex text-red-600"
+            style="right: 0.5rem; top: 0.5rem;">
+            <i class="fa fa-shopping-cart m-auto"></i>
+          </button>
           <div class="text-sm rounded-lg absolute bottom-0 bg-white px-4 py-1 text-red-600" style="margin-bottom: -0.9rem;">&#8377; {{ hoard.amt }}</div>
         </figure>
         <h4 class="font-black text-md mt-6">{{ hoard.name }}</h4>
@@ -21,7 +26,7 @@ v-bind:key="index"
 </template>
 
 <script>
-// import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'DashboardHoarding',
@@ -62,6 +67,7 @@ export default {
     this.getBanners();
   },
   watch: {
+    // eslint-disable-next-line no-unused-vars
     $route(currentVal, oldVal) {
       if (currentVal.name === 'Dashboard.Admin') {
         // this.falseVar = !this.falseVar;

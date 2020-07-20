@@ -150,6 +150,24 @@ const DashboardCompanyPage = () => {
   return import('@/views/mobile/dashboard-pages/company-pages/company-detail.vue');
 };
 
+// {
+//   path: '/login',
+//   name: 'Auth.LoginPage',
+//   component: LoginPage,
+//   meta: {
+//     redirectIfLoggedIn: true,
+//   },
+// },
+
+// {
+//   path: '/home',
+//   name: 'Auth.HomePage',
+//   component: HomePage,
+//   meta: {
+//     redirectIfLoggedIn: true,
+//   },
+// },
+
 const routes = [
   /* Auth Pages */
 
@@ -170,9 +188,8 @@ const routes = [
       redirectIfLoggedIn: true,
     },
   },
-
   {
-    path: '/landing',
+    path: '/home',
     name: 'Auth.LandingPage',
     component: LandingPage,
     meta: {
@@ -359,12 +376,12 @@ export default function createRouter(store) {
   router.beforeEach((to, from, next) => {
     if (to.matched.some((record) => record.meta.requiresAuth)) {
       if (!store.getters.isLoggedIn) {
-        next({
-          name: 'Auth.LoginPage',
-        });
         // next({
-        //   name: 'Auth.RegisterPage',
+        //   name: 'Auth.LoginPage',
         // });
+        next({
+          name: 'Auth.HomePage',
+        });
       } else {
         next();
       }
